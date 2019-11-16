@@ -102,14 +102,14 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="img" destination="WpZ-nJ-oiJ" id="RjS-2d-eo2"/>
-                                            <outlet property="lbl" destination="eWP-5O-CLW" id="OgZ-Od-grs"/>
+                                            <outlet property="lable" destination="eWP-5O-CLW" id="nBF-oH-DAn"/>
+                                            <outlet property="photo" destination="WpZ-nJ-oiJ" id="t12-Pw-gid"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="SIA-EL-kcC" id="bcP-aa-TU1"/>
-                                    <outlet property="delegate" destination="SIA-EL-kcC" id="mxU-OW-Mp6"/>
+                                    <outlet property="dataSource" destination="SIA-EL-kcC" id="gdE-2B-DAa"/>
+                                    <outlet property="delegate" destination="SIA-EL-kcC" id="C4W-Xf-Egz"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Currency List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPM-VN-t8U">
@@ -125,7 +125,7 @@
                         <viewLayoutGuide key="safeArea" id="Cta-kD-vSK"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="8oe-vy-ry9" id="mUQ-iq-rib"/>
+                        <outlet property="tableView" destination="8oe-vy-ry9" id="vQM-9d-VRL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ua-me-JvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

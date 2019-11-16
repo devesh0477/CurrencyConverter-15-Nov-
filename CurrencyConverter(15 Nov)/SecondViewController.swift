@@ -8,9 +8,10 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
-    
-    var currencyName = ["INR","CAD","EURO","USD"]
+class SecondViewController: UIViewController{
+
+    let currencyName = [("INR"),("CAD"),("EURO"),("USD")]
+    let currencyFlagImages =  [UIImage(named:"IndiaFlag"),UIImage(named:"CanadaFlag"),UIImage(named:"EUROFlag"),UIImage(named:"USDFlag")]
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,20 +20,62 @@ class SecondViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    override func didReceiveMemoryWarning() {
+
+    super.didReceiveMemoryWarning()
+
+    // Dispose of any resources that can be recreated.
+
+    }
+}
+
+ extension SecondViewController: UITableViewDataSource, UITableViewDelegate
+ {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath) as! CellTableViewCell
+
+        let courseTitle = currencyName[indexPath .row]
+
+        let Images = currencyFlagImages[indexPath .row]
+
+        cell.lable.text=courseTitle
+
+        cell.photo.image=Images
+
+        return cell
+
+        }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return currencyName.count
+    }
     
 }
-    extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
-        
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return currencyName.count
-        }
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CellTableViewCell
-            cell?.lbl.text = currencyName[indexPath.row]
-            cell?.img.image = UIImage(named: currencyName[indexPath.row])
-            return cell!
-        }
-        
-    }
+
+
+
+
+
+
+
+//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//
+//    let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CellTableViewCell
+//
+//    let courseTitle = currencyName[indexPath .row]
+//
+//    let Images = currencyFlagImages[indexPath .row]
+//
+//    cell.lable.text = courseTitle
+//
+//    cell.photo.image = Images
+//
+//    return cell
+//
+//    }
+    
+
+
 
 
