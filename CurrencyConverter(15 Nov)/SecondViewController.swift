@@ -31,6 +31,10 @@ class SecondViewController: UIViewController{
 
  extension SecondViewController: UITableViewDataSource, UITableViewDelegate
  {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120    //Height of the cell in the table view page
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath) as! CellTableViewCell
 
